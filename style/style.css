@@ -1,0 +1,18 @@
+/* *******Import typo**************** */
+@font-face {
+  font-family: "Old Fenris";
+  src: url(../font/Old\ Fenris.ttf);
+}
+/* ******style genéral ********/
+body {
+  font-family: "Old fenris";
+}
+header {
+  background-color: black;
+}
+header ul {
+  background-color: grey;
+}
+header img {
+  width: 70px;
+}
