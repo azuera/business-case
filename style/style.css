@@ -6,14 +6,177 @@
 /* ******style genéral ********/
 body {
   font-family: "Old fenris";
+  color: #ec0b0bb7;
+}
+
+/* par section specifique */
+/* header */
+header nav img {
+  width: 10%;
 }
 header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.589)),
+    url(../img/Diablo-III_-video-game_-minimal_-monster_-1080x2160-wallpaper.png);
+  background-position: center;
+  background-size: cover;
+}
+header nav {
+  cursor: pointer;
+  color: grey;
+  width: 100%;
+}
+header nav ul {
+  gap: 50px;
+}
+header nav ul li a:hover {
+  background: rgba(211, 211, 211, 0.253);
+  color: #ec0b0bb7;
+}
+header h1 {
+  margin-top: 100px;
+
+  margin-left: 100px;
+
+  font-size: 80px;
+  letter-spacing: 5px;
+}
+header p {
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: right;
+  margin-right: 100px;
+  padding-bottom: 80px;
+  margin-top: 20px;
+}
+header p:nth-of-type(2),
+header p:nth-of-type(3) {
+  text-align: left;
+  margin-left: 100px;
+}
+
+/* section presentation */
+#sectionpresentation {
+  background-image: url(../img/fond\ noir\ texturer.jpg);
+}
+#sectionpresentation img {
+  border-radius: 50px;
+}
+/* *****nftandus****** */
+#nftandus {
+  background-image: url(../img/fond\ noir\ texturer.jpg);
+}
+#imgtyrael {
+  width: 5%;
+}
+
+/* ****footer*** */
+footer {
+  background-color: black;
+  border-top: #ec0b0bb7 solid 2px;
+}
+
+/* ************************************************************** */
+/* carrousel */
+#carrousel {
   background-color: black;
 }
-header ul {
-  background-color: grey;
-  border-radius: 40px;
+main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
 }
-header img {
-  width: 70px;
+
+div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: coral;
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+}
+
+div.item:nth-of-type(1) {
+  --offset: 1;
+  background-image: url(../img/Au\ Ra\ Paladin\,\ Bachzim.png);
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(2) {
+  --offset: 2;
+  background-image: url(../img/archer1.png);
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(3) {
+  --offset: 3;
+  background-image: url(../img/guerrier2.png);
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(4) {
+  --offset: 4;
+  background-image: url(../img/ninja.png);
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(5) {
+  --offset: 5;
+  background-image: url(../img/mage1.png);
+  background-size: cover;
+  background-position: center;
+}
+
+input:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(1):checked ~ main#carousel {
+  --position: 1;
+}
+
+input:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ main#carousel {
+  --position: 2;
+}
+
+input:nth-of-type(3) {
+  grid-column: 4 /5;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ main#carousel {
+  --position: 3;
+}
+
+input:nth-of-type(4) {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ main#carousel {
+  --position: 4;
+}
+
+input:nth-of-type(5) {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(5):checked ~ main#carousel {
+  --position: 5;
 }
