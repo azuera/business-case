@@ -1,0 +1,187 @@
+@import "_base";
+/* *******Import typo**************** */
+@font-face {
+    font-family: "Old Fenris";
+    src: url(../font/Old\ Fenris.ttf);
+  }
+  /* ******style genéral ********/
+  body {
+    font-family: "Old fenris";
+    color: #ec0b0bb7;
+
+  }
+  
+  /* par section specifique */
+  /* header */
+  header nav img {
+    width: 10%;
+  }
+  header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.589)),
+      url(../img/Diablo-III_-video-game_-minimal_-monster_-1080x2160-wallpaper.png);
+    background-position: center;
+    background-size: cover;
+  }
+  header nav {
+    cursor: pointer;
+    color: grey;
+    width: 80%;
+    margin: auto;
+    
+  }
+
+  header a{
+    color: grey;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  header nav ul {
+    gap: 50px;
+  }
+  header nav ul li a:hover {
+    background: rgba(211, 211, 211, 0.253);
+    color: #ec0b0bb7;
+  }
+  header h1 {
+    margin-top: 100px;
+  
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 80px;
+    letter-spacing: 5px;
+  }
+  header p {
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-align: right;
+    margin-right: 100px;
+    padding-bottom: 80px;
+    margin-top: 20px;
+  }
+  header p:nth-of-type(2),
+  header p:nth-of-type(3) {
+    text-align: left;
+    margin-left: 100px;
+  }
+  
+  /* section presentation */
+  #sectionpresentation {
+    background-image: url(../img/fond\ noir\ texturer.jpg);
+  }
+  #sectionpresentation img {
+    border-radius: 50px;
+  }
+  /* *****nftandus****** */
+  #nftandus {
+    background-image: url(../img/fond\ noir\ texturer.jpg);
+   
+  }
+  #imgtyrael {
+    width: 5%;
+  }
+  
+  /* ****footer*** */
+  footer {
+    background-color: black;
+    border-top: #ec0b0bb7 solid 2px;
+  }
+
+#section_carousel{
+    height: 500px;
+    background-color: black;
+}
+
+
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-family: Arial;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    perspective: 300px;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0px;
+    width: 250px;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+    position: absolute;
+    transition: all .3s ease-in;
+    
+    &:nth-child(1) {
+        background-image: url(../img/archer1.png);
+        background-position: center;
+        background-size: cover;
+    }
+    &:nth-child(2) {
+        background-image: url(../img/Au\ Ra\ Paladin\,\ Bachzim.png);
+        background-position: center;
+        background-size: cover;
+    }
+    &:nth-child(3) {
+        background-image: url(../img/guerrier2.png);
+        background-position: center;
+        background-size: cover;
+    }
+    &:nth-child(4) {
+        background-image: url(../img/mage1.png);
+        background-position: center;
+        background-size: cover;
+    }
+    &:nth-child(5) {
+        background-image: url(../img/ninja.png);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &[data-pos="0"] {
+      z-index: 5;
+    }
+    
+    &[data-pos="-1"],
+    &[data-pos="1"] {
+      opacity: 0.7;
+      filter: blur(1px) grayscale(10%);
+    }
+    
+    &[data-pos="-1"] {
+      transform: translateX(-40%) scale(.9);
+      z-index: 4;
+    }
+    
+    &[data-pos="1"] {
+      transform: translateX(40%) scale(.9);
+      z-index: 4;
+    }
+    
+    &[data-pos="-2"],
+    &[data-pos="2"] {
+      opacity: 0.4;
+      filter: blur(3px) grayscale(20%);
+    }
+    
+    &[data-pos="-2"] {
+      transform: translateX(-70%) scale(.8);
+      z-index: 3;
+    }
+    
+    &[data-pos="2"] {
+      transform: translateX(70%) scale(.8);
+      z-index: 3;
+    }
+  }
+}
